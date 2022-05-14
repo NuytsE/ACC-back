@@ -1,0 +1,101 @@
+@prefix schema: <http://schema.org/> .
+@prefix bot:   <https://w3id.org/bot#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix beo:   <http://pi.pauwel.be/voc/buildingelement#> .
+@prefix props: <https://w3id.org/props#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix IFC4-PSD: <http://www.buildingsmart-tech.org/ifcOWL/IFC4-PSD#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix inst:  <http://example.org/> .
+@prefix bsddld: <https://buildingsmart.org/bsddld#> .
+@prefix mep:   <http://pi.pauwel.be/voc/distributionelement#> .
+@prefix furn:  <http://pi.pauwel.be/voc/furniture#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+
+inst:space_0b74b3fa-1a92-405e-9ac9-d59067bfe0cc
+        a                      	bot:Space ;
+        bot:containsElement    	inst:furniture_aa6e13ea-b5bc-4245-93bf-8b2355840c33 , inst:furniture_aa6e13ea-b5bc-4245-93bf-8b2355840d02 ;
+        props:globalIdIfcRoot  	inst:globalIdIfcRoot_0b74b3fa-1a92-405e-9ac9-d59067bfe0cc ;
+        props:longNameIfcSpatialStructureElement
+                inst:longNameIfcSpatialStructureElement_0b74b3fa-1a92-405e-9ac9-d59067bfe0cc ;
+        props:nameIfcRoot      	inst:nameIfcRoot_0b74b3fa-1a92-405e-9ac9-d59067bfe0cc ;
+		props:heightIfcSpace	inst:heightIfcSpace_0b74b3fa-1a92-405e-9ac9-d59067bfe0cc ;
+		props:widthIfcSpace		inst:widthIfcSpace_0b74b3fa-1a92-405e-9ac9-d59067bfe0cc .
+		
+inst:heightIfcSpace_0b74b3fa-1a92-405e-9ac9-d59067bfe0cc schema:value "2200"^^xsd:double .
+inst:widthIfcSpace_0b74b3fa-1a92-405e-9ac9-d59067bfe0cc schema:value "1400"^^xsd:double .
+inst:nameIfcRoot_0b74b3fa-1a92-405e-9ac9-d59067bfe0cc schema:value "B104" .
+
+inst:slab_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd
+        a                          <https://pi.pauwel.be/voc/buildingelement#Slab-LANDING> , <https://pi.pauwel.be/voc/buildingelement#Slab> , bot:Element ;
+        props:batid                inst:batid_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd ;
+        props:globalIdIfcRoot      inst:globalIdIfcRoot_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd ;
+        props:nameIfcRoot          inst:nameIfcRoot_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd ;
+        props:objectTypeIfcObject  inst:objectTypeIfcObject_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd ;
+		props:widthIfcSlab			inst:widthIfcSlab_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd ;
+		props:depthIfcSlab			inst:depthIfcSlab_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd .
+		
+inst:widthIfcSlab_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd schema:value "1100"^^xsd:double .
+inst:depthIfcSlab_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd schema:value "1400"^^xsd:double .
+inst:batid_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd schema:value "153658" .
+
+inst:rampflight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd
+        a                          <https://pi.pauwel.be/voc/buildingelement#RampFlight> , bot:Element ;
+        props:batid                inst:batid_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd ;
+        props:globalIdIfcRoot      inst:globalIdIfcRoot_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd ;
+        props:nameIfcRoot          inst:nameIfcRoot_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd ;
+        props:objectTypeIfcObject  inst:objectTypeIfcObject_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd ;
+		props:heightIfcRampFlight	inst:heightIfcRampFlight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd ;
+		props:lengthIfcRampFlight	inst:lengthIfcRampFlight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd ;
+		props:widthIfcRampFlight	inst:widthIfcRampFlight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd .
+		
+inst:heightIfcRampFlight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd schema:value "550"^^xsd:double .
+inst:lengthIfcRampFlight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd schema:value "850"^^xsd:double .
+inst:widthIfcRampFlight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd schema:value "1100"^^xsd:double .
+inst:batid_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd schema:value "698423" .
+
+inst:stairflight_49ae3975-40eb-4040-87b2-554336d70119
+        a                          <https://pi.pauwel.be/voc/buildingelement#StairFlight> , bot:Element ;
+        props:batid                inst:batid_49ae3975-40eb-4040-87b2-554336d70119 ;
+        props:globalIdIfcRoot      inst:globalIdIfcRoot_49ae3975-40eb-4040-87b2-554336d70119 ;
+        props:nameIfcRoot          inst:nameIfcRoot_49ae3975-40eb-4040-87b2-554336d70119 ;
+        props:numberOfRiserIfcStairFlight
+                inst:numberOfRiserIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119 ;
+        props:numberOfTreadsIfcStairFlight
+                inst:numberOfTreadsIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119 ;
+        props:objectTypeIfcObject  inst:objectTypeIfcObject_49ae3975-40eb-4040-87b2-554336d70119 ;
+        props:riserHeightIfcStairFlight
+                inst:riserHeightIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119 ;
+        props:treadLengthIfcStairFlight
+                inst:treadLengthIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119 ;
+		props:widthIfcStairFlight inst:widthIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119.
+				
+inst:widthIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119 schema:value "900"^^xsd:double .
+inst:numberOfRiserIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119 schema:value "18"^^xsd:double .
+inst:riserHeightIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119 schema:value "270"^^xsd:double .
+inst:treadLengthIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119 schema:value "110"^^xsd:double .
+inst:batid_49ae3975-40eb-4040-87b2-554336d70119 schema:value "547832" .
+
+inst:stair_81be7c96-ce56-447e-9d93-021422f83127
+        a                          bot:Element , <https://pi.pauwel.be/voc/buildingelement#Stair> ;
+        bot:aggregates             inst:railing_81be7c96-ce56-447e-9d93-021422f830c5 ;
+        props:batid                inst:batid_81be7c96-ce56-447e-9d93-021422f83127 ;
+        props:globalIdIfcRoot      inst:globalIdIfcRoot_81be7c96-ce56-447e-9d93-021422f83127 ;
+        props:nameIfcRoot          inst:nameIfcRoot_81be7c96-ce56-447e-9d93-021422f83127 ;
+        props:objectTypeIfcObject  inst:objectTypeIfcObject_81be7c96-ce56-447e-9d93-021422f83127 .
+		
+inst:batid_81be7c96-ce56-447e-9d93-021422f83127 schema:value "847265" .
+		
+inst:door_6b61ce71-1a7a-473c-8f87-4262e0bdb41a
+        a                           <https://pi.pauwel.be/voc/buildingelement#Door> , bot:Element ;
+        props:batid                 inst:batid_6b61ce71-1a7a-473c-8f87-4262e0bdb41a ;
+        props:globalIdIfcRoot       inst:globalIdIfcRoot_6b61ce71-1a7a-473c-8f87-4262e0bdb41a ;
+        props:nameIfcRoot           inst:nameIfcRoot_6b61ce71-1a7a-473c-8f87-4262e0bdb41a ;
+        props:objectTypeIfcObject   inst:objectTypeIfcObject_6b61ce71-1a7a-473c-8f87-4262e0bdb41a ;
+        props:overallHeightIfcDoor  inst:overallHeightIfcDoor_6b61ce71-1a7a-473c-8f87-4262e0bdb41a ;
+        props:overallWidthIfcDoor   inst:overallWidthIfcDoor_6b61ce71-1a7a-473c-8f87-4262e0bdb41a .
+		
+inst:overallHeightIfcDoor_6b61ce71-1a7a-473c-8f87-4262e0bdb41a schema:value "2080"^^xsd:double .
+inst:overallWidthIfcDoor_6b61ce71-1a7a-473c-8f87-4262e0bdb41a schema:value "80"^^xsd:double .
+inst:batid_6b61ce71-1a7a-473c-8f87-4262e0bdb41a schema:value "984723" .
