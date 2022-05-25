@@ -1,11 +1,10 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const compression = require('compression')
-const helmet = require('helmet')
-const multer = require('multer')
-const cors = require('cors')
-const validate = require('./validator')
-const { type } = require('@testing-library/user-event/dist/type')
+const express = require("express");
+const bodyParser = require("body-parser");
+const compression = require("compression");
+const helmet = require("helmet");
+const multer = require("multer");
+const cors = require("cors");
+const nReadlines = require("n-readlines");
 
 const storage = multer.diskStorage({
   destination: function (req, file, next) {
@@ -45,9 +44,40 @@ app.post("/upload", upload.single("LBDFile"), (req, res) => {
 
 app.get("/report", async (req, res) => {
   try {
-    validate()
+    const { spawn } = require("child_process");
+    //pyshacl -s C:\Users\emman\OneDrive\Documenten\'21-'22\Thesis\rulebooks\rulebook.ttl -m -i rdfs -a -j -f human C:\Users\emman\OneDrive\Documenten\'21-'22\Thesis\modeldump\bibliotheekEdegem.ttl
+    const report = spawn("pyshacl", ["--shacl",`${process.cwd()}\\files\\rulebook.ttl`, '-m', '-i', 'rdfs', '-a', '-j', '-f', 'human', `${process.cwd()}\\files\\LBDFile.ttl`,"--output",`${process.cwd()}\\files\\report`,]);
 
-    res.status(200).send();
+    const broadbandLines = new nReadlines("files\\report");
+
+    let line;
+    var temp = {};
+    var dict = {};
+    var allResults = [];
+
+    while ((line = broadbandLines.next())) {
+      const splitted = String(line).split(":");
+
+      if (splitted[0].slice(0, 20) === "Constraint Violation") {
+        if (Object.keys(temp).length !== 0) {
+          temp["id"] = "156978";
+          allResults.push(temp);
+        }
+        var temp = {};
+      } else if (splitted[0].substring(1) === "Severity")
+        temp["severity"] = splitted[2].slice(0, splitted[2].length - 1);
+      else if (splitted[0].substring(1) === "Source Shape")
+        temp["sourceShape"] = splitted[2].slice(0, splitted[2].length - 1);
+      else if (splitted[0].substring(1) === "Focus Node")
+        temp["focusNode"] = splitted[2].slice(0, splitted[2].length - 1);
+      else if (splitted[0].substring(1) === "Message")
+        temp["message"] = splitted[1].slice(0, splitted[1].length - 1);
+    }
+    temp["id"] = "156978";
+          allResults.push(temp);
+    dict["results"] = allResults;
+
+    res.status(200).send(dict);
   } catch (error) {
     res.status(400).send(error);
   }

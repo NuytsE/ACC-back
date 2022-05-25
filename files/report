@@ -1,0 +1,24 @@
+Validation Report
+Conforms: False
+Results (18):
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:StairFlightTread
+	Focus Node: inst:treadLengthIfcStairFlight_bcd1cf34-5c93-41cc-a7e4-6669a028e824
+	Value Node: Literal("0.820209973753281", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: The tread length must be at least 230 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:DoorHeight
+	Focus Node: inst:overallHeightIfcDoor_7b98892b-a279-4556-b928-6af71ee09fc1
+	Value Node: Literal("1981.2", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: The door height must be at least 2090 mm.
+Constraint Violation in ExpressionConstraintComponent (http://www.w3.org/ns/shacl#ExpressionConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:TooEasy
+	Focus Node: inst:stairflight_3f36fd30-4028-40f0-bc0e-73cddf919877
+	Value Node: inst:stairflight_3f36fd30-4028-40f0-bc0e-73cddf919877
+	Source Constraint: [ inst:lessThan ( Literal("570", datatype=xsd:integer) [ inst:stairFormula ( <http://recursion.too.deep> <http://recursion.too.deep> ) ] ) ; sh:message Literal("This stair is too easy.") ]
+	Message: This stair is too easy.

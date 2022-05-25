@@ -2,11 +2,11 @@ const {spawn} = require('child_process')
 const report = spawn('pyshacl', ['--shacl',`${process.cwd()}\\files\\rulebook.ttl`,`${process.cwd()}\\files\\LBDFile.ttl`])
 
 report.stdout.on('data', (data) => {
-    console.log(`stdout: ${data}`);
+    //console.log(`stdout: ${data}`);
   });
 
 report.stderr.on('data', (data) => {
-    console.error(`stderr: ${data}`);
+    //console.error(`stderr: ${data}`);
   });
 
 
