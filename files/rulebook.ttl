@@ -16,13 +16,13 @@ schema:SpaceMVD
     sh:path props:heightIfcSpace ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'heightIfcSpace'." ;
+    sh:message "MVD - each space should have exactly one 'heightIfcSpace'." ;
   ] ;
   sh:property [
     sh:path props:widthIfcSpace ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'widthIfcSpace'." ;
+    sh:message "MVD - each space should have exactly one 'widthIfcSpace'." ;
   ] .
 
 schema:RampFlightMVD
@@ -32,19 +32,19 @@ schema:RampFlightMVD
     sh:path props:heightIfcRampFlight ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'heightIfcRampFlight'." ;
+    sh:message "MVD - each rampflight should have exactly one 'heightIfcRampFlight'." ;
   ] ;
   sh:property [
     sh:path props:lengthIfcRampFlight ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'lengthIfcRampFlight'." ;
+    sh:message "MVD - each rampflight should have exactly one 'lengthIfcRampFlight'." ;
   ] ;
   sh:property [
     sh:path props:widthIfcRampFlight ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'widthIfcRampFlight'." ;
+    sh:message "MVD - each rampflight should have exactly one 'widthIfcRampFlight'." ;
   ] .
 
 schema:SlabMVD
@@ -54,13 +54,13 @@ schema:SlabMVD
     sh:path props:widthIfcSlab ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'widthIfcSlab'." ;
+    sh:message "MVD - each slab should have exactly one 'widthIfcSlab'." ;
   ] ;
   sh:property [
     sh:path props:depthIfcSlab ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'depthIfcSlab'." ;
+    sh:message "MVD - each slab should have exactly one 'depthIfcSlab'." ;
   ] .
 
 schema:StairMVD
@@ -70,19 +70,19 @@ schema:StairMVD
     sh:path props:numberOfRiserIfcStairFlight ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'numberOfRiserIfcStairFlight'." ;
+    sh:message "MVD - each stair should have exactly one 'numberOfRiserIfcStairFlight'." ;
   ] ;
   sh:property [
     sh:path props:riserHeightIfcStairFlight ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'riserHeightIfcStairFlight'." ;
+    sh:message "MVD - each stair should have exactly one 'riserHeightIfcStairFlight'." ;
   ] ;
   sh:property [
     sh:path props:treadLengthIfcStairFlight ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'treadLengthIfcStairFlight'." ;
+    sh:message "MVD - each stair should have exactly one 'treadLengthIfcStairFlight'." ;
   ] .
 
 schema:DoorMVD
@@ -92,13 +92,13 @@ schema:DoorMVD
     sh:path props:overallHeightIfcDoor ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'overallHeightIfcDoor'." ;
+    sh:message "MVD - each door should have exactly one 'overallHeightIfcDoor'." ;
   ] ;
   sh:property [
     sh:path props:overallWidthIfcDoor ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD: each space should have exactly one 'overallWidthIfcDoor'." ;
+    sh:message "MVD - each door should have exactly one 'overallWidthIfcDoor'." ;
   ] .
 
 inst:lessThan
@@ -178,18 +178,18 @@ schema:SpaceHeight
   a sh:PropertyShape ;
   sh:path schema:value ;
   sh:minInclusive "2300"^^xsd:double ;
-  sh:message "Art. 12 §2: The clearance height must be at least 2300 mm." .  
+  sh:message "Art. 12 - The clearance height must be at least 2300 mm." .  
 
 schema:SpaceWidth
   a sh:PropertyShape ;
   sh:path schema:value ;
   sh:minInclusive "1500"^^xsd:double ;
-  sh:message "Art. 14: The width of the walkway must be at least 1500 mm." .
+  sh:message "Art. 14 - The width of the walkway must be at least 1500 mm." .
 
 schema:Slopes;
   a sh:NodeShape ;
   sh:targetClass beo:RampFlight ;
-  sh:message "Art. 19 §1: The slope of a rampflight can be at most 10% when the difference in height is less than 100 mm. The slope of a rampflight can be at most 8.3% when the difference in height lies between 100 and 250 mm. The slope of a rampflight can be at most 6.25% when the difference in height lies between 250 and 500 mm. The slope of a rampflight can be at most 5% when the difference in height is more than 500 mm." ;
+  sh:message "Art. 19 - The slope of a rampflight can be at most 10% when the difference in height is less than 100 mm. The slope of a rampflight can be at most 8.3% when the difference in height lies between 100 and 250 mm. The slope of a rampflight can be at most 6.25% when the difference in height lies between 250 and 500 mm. The slope of a rampflight can be at most 5% when the difference in height is more than 500 mm." ;
   sh:or (
     [
       sh:and (
@@ -311,13 +311,13 @@ schema:RampLandingWidth
   a sh:PropertyShape ;
   sh:path schema:value ;
   sh:minInclusive "1200"^^xsd:double ;
-  sh:message "Art. 19 §2: The width of a landing of a ramp must be at least 1200 mm." .
+  sh:message "Art. 19 - The width of a landing of a ramp must be at least 1200 mm." .
 
 schema:RampLandingDepth
   a sh:PropertyShape ;
   sh:path schema:value ;
   sh:minInclusive "1500"^^xsd:double ;
-  sh:message "Art. 19 §2: The depth of a landing of a ramp must be at least 1500 mm." .
+  sh:message "Art. 19 - The depth of a landing of a ramp must be at least 1500 mm." .
 
 schema:RampFlight
   a sh:NodeShape ;
@@ -331,7 +331,7 @@ schema:RampFlightLanding
   a sh:PropertyShape ;
   sh:path schema:value ;
   sh:maxInclusive "500"^^xsd:double ;
-  sh:message "Art. 19 §4: A ramp must have an intermediate landing if the difference in height is more than 500 mm." .
+  sh:message "Art. 19 - A ramp must have an intermediate landing if the difference in height is more than 500 mm." .
 
 schema:RampFlightWidth
   a sh:NodeShape ;
@@ -341,7 +341,7 @@ schema:RampFlightWidth
       sh:and (
         [
           sh:expression [
-            sh:message "Art. 19 §5: The width of a rampflight must be at least 1200 mm, if the slope is more than 4%." ;
+            sh:message "Art. 19 - The width of a rampflight must be at least 1200 mm, if the slope is more than 4%." ;
             inst:lessThan (
               4
               [
@@ -399,25 +399,25 @@ schema:StairFlightLanding
   a sh:PropertyShape ;
   sh:path schema:value ; 
   sh:maxInclusive "17"^^xsd:double ;
-	sh:message "Art. 20 §2: A staircase must have an intermediate landing after at most 17 treads." .
+	sh:message "Art. 20 - A staircase must have an intermediate landing after at most 17 treads." .
 
 schema:StairFlightRiser
   a sh:PropertyShape ;
   sh:path schema:value ;
   sh:maxInclusive "180"^^xsd:double ;
-  sh:message "Art. 20 §3: The riser height must be at most 180 mm." .
+  sh:message "Art. 20 - The riser height must be at most 180 mm." .
 
 schema:StairFlightTread
   a sh:PropertyShape ;
   sh:path schema:value ;
   sh:minInclusive "230"^^xsd:double ;
-  sh:message "Art. 20 §3: The tread length must be at least 230 mm." .
+  sh:message "Art. 20 - The tread length must be at least 230 mm." .
 
 schema:TooEasy
   a sh:NodeShape ;
   sh:targetClass beo:StairFlight ;
   sh:expression [
-    sh:message "Art. 20 §3: This stair is too easy." ;
+    sh:message "Art. 20 - This stair is too easy." ;
     inst:lessThan (
       570
       [
@@ -433,7 +433,7 @@ schema:TooSteep
   a sh:NodeShape ;
   sh:targetClass beo:StairFlight ;
   sh:expression [
-    sh:message "Art. 20 §3: This stair is too steep." ;
+    sh:message "Art. 20 - This stair is too steep." ;
     inst:lessThan (
       [
         inst:stairFormula (
@@ -452,7 +452,7 @@ schema:Stair
     sh:path bot:hasSubElement ;
     sh:qualifiedValueShape [ sh:class beo:Railing ] ;
     sh:qualifiedMinCount 2 ;
-    sh:message "Art. 20 §4: All stairs must have a railing on both sides." ;
+    sh:message "Art. 20 - All stairs must have a railing on both sides." ;
   ] ;
   sh:property [
     sh:path props:width ;
@@ -463,7 +463,7 @@ schema:StairWidth
   a sh:PropertyShape ;
   sh:path schema:value ;
   sh:minInclusive "1000"^^xsd:double ;
-  sh:message "Art. 20 §1: The width of a staircase must be at least 1000 mm." .
+  sh:message "Art. 20 - The width of a staircase must be at least 1000 mm." .
 
 schema:Door
   a sh:NodeShape ;
@@ -481,10 +481,10 @@ schema:DoorHeight
   a sh:PropertyShape ;
   sh:path schema:value ;
   sh:minInclusive "2090"^^xsd:double ;
-  sh:message "Art. 22 §1: The door height must be at least 2090 mm." .
+  sh:message "Art. 22 - The door height must be at least 2090 mm." .
 
 schema:DoorWidth
   a sh:PropertyShape ;
   sh:path schema:value ;
   sh:minInclusive "900"^^xsd:double ;
-  sh:message "Art. 22 §2: The door width must at least 900 mm." .
+  sh:message "Art. 22 - The door width must at least 900 mm." .

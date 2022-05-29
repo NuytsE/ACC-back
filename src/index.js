@@ -46,7 +46,21 @@ app.get("/report", async (req, res) => {
   try {
     const { spawn } = require("child_process");
     //pyshacl -s C:\Users\emman\OneDrive\Documenten\'21-'22\Thesis\rulebooks\rulebook.ttl -m -i rdfs -a -j -f human C:\Users\emman\OneDrive\Documenten\'21-'22\Thesis\modeldump\bibliotheekEdegem.ttl
-    const report = spawn("pyshacl", ["--shacl",`${process.cwd()}\\files\\rulebook.ttl`, '-m', '-i', 'rdfs', '-a', '-j', '-f', 'human', `${process.cwd()}\\files\\LBDFile.ttl`,"--output",`${process.cwd()}\\files\\report`,]);
+    {/*const report = spawn("pyshacl", [
+      "--shacl",
+      `${process.cwd()}\\files\\rulebook.ttl`,
+      "-m",
+      "-i",
+      "rdfs",
+      "-a",
+      "-j",
+      "-f",
+      "human",
+      `${process.cwd()}\\files\\LBDFile.ttl`,
+      "--output",
+      `${process.cwd()}\\files\\report`,
+    ]);
+  */}
 
     const broadbandLines = new nReadlines("files\\report");
 
@@ -64,17 +78,28 @@ app.get("/report", async (req, res) => {
           allResults.push(temp);
         }
         var temp = {};
+        var shape = ""
+        if (splitted[0].slice(24,62) === "QualifiedValueShapeConstraintComponent") {
+          var shape = "Stair"
+        } else if (splitted[0].slice(24,51) === "MinCountConstraintComponent" ) {
+          var shape = "MVD"
+        }
       } else if (splitted[0].substring(1) === "Severity")
         temp["severity"] = splitted[2].slice(0, splitted[2].length - 1);
       else if (splitted[0].substring(1) === "Source Shape")
-        temp["sourceShape"] = splitted[2].slice(0, splitted[2].length - 1);
+        if (shape !== "") {
+          temp["sourceShape"] = shape
+        } else {
+         temp["sourceShape"] = splitted[2].slice(0, splitted[2].length - 1); 
+        }
+        
       else if (splitted[0].substring(1) === "Focus Node")
         temp["focusNode"] = splitted[2].slice(0, splitted[2].length - 1);
       else if (splitted[0].substring(1) === "Message")
         temp["message"] = splitted[1].slice(0, splitted[1].length - 1);
     }
     temp["id"] = "156978";
-          allResults.push(temp);
+    allResults.push(temp);
     dict["results"] = allResults;
 
     res.status(200).send(dict);

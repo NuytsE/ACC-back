@@ -1,24 +1,111 @@
 Validation Report
 Conforms: False
-Results (18):
+Results (16):
 Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
 	Severity: sh:Violation
-	Source Shape: schema1:StairFlightTread
-	Focus Node: inst:treadLengthIfcStairFlight_bcd1cf34-5c93-41cc-a7e4-6669a028e824
-	Value Node: Literal("0.820209973753281", datatype=xsd:double)
+	Source Shape: schema1:DoorHeight
+	Focus Node: inst:overallHeightIfcDoor_7b98892b-a279-4556-b928-6af71ee09084
+	Value Node: Literal("1981.2", datatype=xsd:double)
 	Result Path: schema1:value
-	Message: The tread length must be at least 230 mm.
+	Message: Art. 22 - The door height must be at least 2090 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:DoorHeight
+	Focus Node: inst:overallHeightIfcDoor_7b98892b-a279-4556-b928-6af71ee09f7f
+	Value Node: Literal("1981.2", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 22 - The door height must be at least 2090 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:DoorHeight
+	Focus Node: inst:overallHeightIfcDoor_7b98892b-a279-4556-b928-6af71ee090d6
+	Value Node: Literal("1981.2", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 22 - The door height must be at least 2090 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:DoorHeight
+	Focus Node: inst:overallHeightIfcDoor_055cceea-293a-4b3d-afc2-3583db81a0f8
+	Value Node: Literal("1981.2", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 22 - The door height must be at least 2090 mm.
 Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
 	Severity: sh:Violation
 	Source Shape: schema1:DoorHeight
 	Focus Node: inst:overallHeightIfcDoor_7b98892b-a279-4556-b928-6af71ee09fc1
 	Value Node: Literal("1981.2", datatype=xsd:double)
 	Result Path: schema1:value
-	Message: The door height must be at least 2090 mm.
+	Message: Art. 22 - The door height must be at least 2090 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:DoorHeight
+	Focus Node: inst:overallHeightIfcDoor_7b98892b-a279-4556-b928-6af71ee09f3b
+	Value Node: Literal("1981.2", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 22 - The door height must be at least 2090 mm.
+Constraint Violation in QualifiedValueShapeConstraintComponent (http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("Art. 20 - All stairs must have a railing on both sides.") ; sh:path bot:hasSubElement ; sh:qualifiedMinCount Literal("2", datatype=xsd:integer) ; sh:qualifiedValueShape [ sh:class beo:Railing ] ]
+	Focus Node: inst:stair_bcd1cf34-5c93-41cc-a7e4-6669a028e264
+	Result Path: bot:hasSubElement
+	Message: Art. 20 - All stairs must have a railing on both sides.
+Constraint Violation in QualifiedValueShapeConstraintComponent (http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("Art. 20 - All stairs must have a railing on both sides.") ; sh:path bot:hasSubElement ; sh:qualifiedMinCount Literal("2", datatype=xsd:integer) ; sh:qualifiedValueShape [ sh:class beo:Railing ] ]
+	Focus Node: inst:stair_3f36fd30-4028-40f0-bc0e-73cddf91a5d4
+	Result Path: bot:hasSubElement
+	Message: Art. 20 - All stairs must have a railing on both sides.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:StairFlightTread
+	Focus Node: inst:treadLengthIfcStairFlight_3f36fd30-4028-40f0-bc0e-73cddf919877
+	Value Node: Literal("0.820209973753281", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 20 - The tread length must be at least 230 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:StairFlightTread
+	Focus Node: inst:treadLengthIfcStairFlight_bcd1cf34-5c93-41cc-a7e4-6669a028e872
+	Value Node: Literal("0.820209973753281", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 20 - The tread length must be at least 230 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:StairFlightTread
+	Focus Node: inst:treadLengthIfcStairFlight_bcd1cf34-5c93-41cc-a7e4-6669a028e824
+	Value Node: Literal("0.820209973753281", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 20 - The tread length must be at least 230 mm.
 Constraint Violation in ExpressionConstraintComponent (http://www.w3.org/ns/shacl#ExpressionConstraintComponent):
 	Severity: sh:Violation
 	Source Shape: schema1:TooEasy
 	Focus Node: inst:stairflight_3f36fd30-4028-40f0-bc0e-73cddf919877
 	Value Node: inst:stairflight_3f36fd30-4028-40f0-bc0e-73cddf919877
-	Source Constraint: [ inst:lessThan ( Literal("570", datatype=xsd:integer) [ inst:stairFormula ( <http://recursion.too.deep> <http://recursion.too.deep> ) ] ) ; sh:message Literal("This stair is too easy.") ]
-	Message: This stair is too easy.
+	Source Constraint: [ inst:lessThan ( Literal("570", datatype=xsd:integer) [ inst:stairFormula ( <http://recursion.too.deep> <http://recursion.too.deep> ) ] ) ; sh:message Literal("Art. 20 - This stair is too easy.") ]
+	Message: Art. 20 - This stair is too easy.
+Constraint Violation in ExpressionConstraintComponent (http://www.w3.org/ns/shacl#ExpressionConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:TooEasy
+	Focus Node: inst:stairflight_bcd1cf34-5c93-41cc-a7e4-6669a028e872
+	Value Node: inst:stairflight_bcd1cf34-5c93-41cc-a7e4-6669a028e872
+	Source Constraint: [ inst:lessThan ( Literal("570", datatype=xsd:integer) [ inst:stairFormula ( <http://recursion.too.deep> <http://recursion.too.deep> ) ] ) ; sh:message Literal("Art. 20 - This stair is too easy.") ]
+	Message: Art. 20 - This stair is too easy.
+Constraint Violation in ExpressionConstraintComponent (http://www.w3.org/ns/shacl#ExpressionConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:TooEasy
+	Focus Node: inst:stairflight_bcd1cf34-5c93-41cc-a7e4-6669a028e824
+	Value Node: inst:stairflight_bcd1cf34-5c93-41cc-a7e4-6669a028e824
+	Source Constraint: [ inst:lessThan ( Literal("570", datatype=xsd:integer) [ inst:stairFormula ( <http://recursion.too.deep> <http://recursion.too.deep> ) ] ) ; sh:message Literal("Art. 20 - This stair is too easy.") ]
+	Message: Art. 20 - This stair is too easy.
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("MVD - each space should have exactly one 'widthIfcSlab'.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path props:widthIfcSlab ]
+	Focus Node: inst:slab_bcd1cf34-5c93-41cc-a7e4-6669a028e874
+	Result Path: props:widthIfcSlab
+	Message: MVD - each space should have exactly one 'widthIfcSlab'.
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("MVD - each space should have exactly one 'depthIfcSlab'.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path props:depthIfcSlab ]
+	Focus Node: inst:slab_bcd1cf34-5c93-41cc-a7e4-6669a028e874
+	Result Path: props:depthIfcSlab
+	Message: MVD - each space should have exactly one 'depthIfcSlab'.
