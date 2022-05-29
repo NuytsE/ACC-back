@@ -188,7 +188,7 @@ schema:SpaceWidth
 
 schema:Slopes;
   a sh:NodeShape ;
-  sh:targetClass bot:RampFlight ;
+  sh:targetClass beo:RampFlight ;
   sh:message "Art. 19 §1: The slope of a rampflight can be at most 10% when the difference in height is less than 100 mm. The slope of a rampflight can be at most 8.3% when the difference in height lies between 100 and 250 mm. The slope of a rampflight can be at most 6.25% when the difference in height lies between 250 and 500 mm. The slope of a rampflight can be at most 5% when the difference in height is more than 500 mm." ;
   sh:or (
     [
