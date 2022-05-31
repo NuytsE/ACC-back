@@ -2,7 +2,6 @@
 @prefix bot:   <https://w3id.org/bot#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix beo:   <http://pi.pauwel.be/voc/buildingelement#> .
 @prefix props: <https://w3id.org/props#> .
 @prefix geo:   <http://www.opengis.net/ont/geosparql#> .
 @prefix IFC4-PSD: <http://www.buildingsmart-tech.org/ifcOWL/IFC4-PSD#> .
@@ -54,7 +53,7 @@ inst:globalIdIfcRoot_57ba851c-6c7e-43eb-a968-95c0ea968204
 
 inst:roof_7582c817-71a4-41b4-9a77-deef3f76a029
         a                          <https://pi.pauwel.be/voc/buildingelement#Roof> , bot:Element ;
-        bot:aggregates             inst:slab_7582c817-71a4-41b4-9a77-deed3f76a029 ;
+        bot:hasSubElement          inst:slab_7582c817-71a4-41b4-9a77-deed3f76a029 ;
         props:batid                inst:batid_7582c817-71a4-41b4-9a77-deef3f76a029 ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_7582c817-71a4-41b4-9a77-deef3f76a029 ;
         props:nameIfcRoot          inst:nameIfcRoot_7582c817-71a4-41b4-9a77-deef3f76a029 ;
@@ -776,7 +775,7 @@ inst:globalIdIfcRoot_4c01da63-52b9-49ab-9b3d-b9163d479c99
         schema:value  "1C0TfZKhb9gvizkHOzHvoP" .
 
 inst:treadLengthIfcStairFlight_bcd1cf34-5c93-41cc-a7e4-6669a028e824
-        schema:value  "0.820209973753281"^^xsd:double .
+        schema:value  "240"^^xsd:double .
 
 inst:globalIdIfcRoot_57ba851c-6c7e-43eb-a968-95c0ea96826b
         schema:value  "1NkeKSR7v3wwbebS3gbe9h" .
@@ -971,7 +970,7 @@ inst:nameIfcRoot_d44a18f9-5918-453b-b4e8-add9abbdfe25
         schema:value  "M_Rectangular Column:300 x 300 mm:385631" .
 
 inst:treadLengthIfcStairFlight_3f36fd30-4028-40f0-bc0e-73cddf919877
-        schema:value  "0.820209973753281"^^xsd:double .
+        schema:value  "270"^^xsd:double .
 
 inst:nameIfcRoot_35198bac-3830-42bd-8296-d97bf0fdfc42
         schema:value  "Basic Wall:Generic - 100mm:367838" .
@@ -1885,7 +1884,7 @@ inst:overallWidthIfcWindow_26b15939-6ab5-4afb-971c-d683aa1c2cbb
 
 inst:curtainwall_b402cada-c424-4de6-9db4-11a9297c76dc
         a                          bot:Element , <https://pi.pauwel.be/voc/buildingelement#CurtainWall> ;
-        bot:aggregates             inst:member_26b15939-6ab5-4afb-971c-d683aa1c237c , inst:member_26b15939-6ab5-4afb-971c-d683aa1c237a , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2379 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2378 , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c221c , inst:plate_b402cada-c424-4de6-9db4-11a9297c76dd , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2376 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c237d , inst:member_26b15939-6ab5-4afb-971c-d683aa1c237b ;
+        bot:hasSubElement          inst:member_26b15939-6ab5-4afb-971c-d683aa1c237c , inst:member_26b15939-6ab5-4afb-971c-d683aa1c237a , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2379 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2378 , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c221c , inst:plate_b402cada-c424-4de6-9db4-11a9297c76dd , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2376 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c237d , inst:member_26b15939-6ab5-4afb-971c-d683aa1c237b ;
         props:batid                inst:batid_b402cada-c424-4de6-9db4-11a9297c76dc ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_b402cada-c424-4de6-9db4-11a9297c76dc ;
         props:nameIfcRoot          inst:nameIfcRoot_b402cada-c424-4de6-9db4-11a9297c76dc ;
@@ -2866,7 +2865,7 @@ inst:globalIdIfcRoot_75b661cc-38fa-423e-8a18-f2836f3ab8cc
         schema:value  "1rjc7CEFf2FeeOyeDlEhZC" .
 
 inst:riserHeightIfcStairFlight_bcd1cf34-5c93-41cc-a7e4-6669a028e824
-        schema:value  "0.745980971128609"^^xsd:double .
+        schema:value  "170"^^xsd:double .
 
 inst:globalIdIfcRoot_4c01da63-52b9-49ab-9b3d-b9163d479c8e
         schema:value  "1C0TfZKhb9gvizkHOzHvoE" .
@@ -3044,7 +3043,7 @@ inst:objectTypeIfcObject_f28aca74-285d-423d-894d-c8d36c9376f0
         schema:value  "Ramen ontwerp:Ramen ontwerp" .
 
 inst:numberOfRiserIfcStairFlight_bcd1cf34-5c93-41cc-a7e4-6669a028e824
-        schema:value  8 .
+        schema:value  19 .
 
 inst:nameIfcRoot_57ba851c-6c7e-43eb-a968-95c0ea968a67
         schema:value  "Timber:300 x 140:559586" .
@@ -3081,7 +3080,7 @@ inst:wall_975407c3-fcde-4d77-a5c9-10a00d90ea31
         props:objectTypeIfcObject  inst:objectTypeIfcObject_975407c3-fcde-4d77-a5c9-10a00d90ea31 .
 
 inst:overallWidthIfcDoor_7582c817-71a4-41b4-9a77-deef3f76aeaf
-        schema:value  "915."^^xsd:double .
+        schema:value  "815."^^xsd:double .
 
 inst:plate_26b15939-6ab5-4afb-971c-d683aa1c233e
         a                          <https://pi.pauwel.be/voc/buildingelement#Plate> , bot:Element ;
@@ -3110,7 +3109,7 @@ inst:nameIfcRoot_77a80bbf-cd08-4d3b-98a5-781cad8e0594
         schema:value  "Basic Wall:Generic - 100mm:483230" .
 
 inst:riserHeightIfcStairFlight_3f36fd30-4028-40f0-bc0e-73cddf919877
-        schema:value  "0.492125984251969"^^xsd:double .
+        schema:value  "190"^^xsd:double .
 
 inst:member_26b15939-6ab5-4afb-971c-d683aa1c2316
         a                          <https://pi.pauwel.be/voc/buildingelement#Member> , bot:Element ;
@@ -3312,9 +3311,6 @@ inst:globalIdIfcRoot_a6ffe862-87ed-4972-b0a4-3576fbaef1c2
 inst:batid_4c01da63-52b9-49ab-9b3d-b9163d479b5b
         schema:value  "562007" .
 
-inst:numberOfRiserIfcStairFlight_3f36fd30-4028-40f0-bc0e-73cddf919877
-        schema:value  5 .
-
 inst:column_23ab4bcc-22d3-4d02-856d-a54ec438ae52
         a                          <https://pi.pauwel.be/voc/buildingelement#Column> , bot:Element ;
         props:batid                inst:batid_23ab4bcc-22d3-4d02-856d-a54ec438ae52 ;
@@ -3407,7 +3403,7 @@ inst:objectTypeIfcObject_bcd1cf34-5c93-41cc-a7e4-6669a028e264
         schema:value  "Assembled Stair:190mm max riser 250mm going" .
 
 inst:overallHeightIfcDoor_7b98892b-a279-4556-b928-6af71ee09fc1
-        schema:value  "1981.2"^^xsd:double .
+        schema:value  "2100"^^xsd:double .
 
 inst:globalIdIfcRoot_055cceea-293a-4b3d-afc2-3583db81a28b
         schema:value  "05NCxgAJfBFQ$2DOFRWQAB" .
@@ -4194,11 +4190,15 @@ inst:furniture_a6ffe862-87ed-4972-b0a4-3576fbaef0ba
 
 inst:stair_bcd1cf34-5c93-41cc-a7e4-6669a028e264
         a                          <https://pi.pauwel.be/voc/buildingelement#Stair> , bot:Element ;
-        bot:aggregates             inst:slab_bcd1cf34-5c93-41cc-a7e4-6669a028e874 , inst:member_bcd1cf34-5c93-41cc-a7e4-6669a028e827 , inst:member_bcd1cf34-5c93-41cc-a7e4-6669a028e87a , inst:railing_bcd1cf34-5c93-41cc-a7e4-6669a028e93f , inst:stairflight_bcd1cf34-5c93-41cc-a7e4-6669a028e824 , inst:member_bcd1cf34-5c93-41cc-a7e4-6669a028e826 , inst:member_bcd1cf34-5c93-41cc-a7e4-6669a028e877 , inst:railing_bcd1cf34-5c93-41cc-a7e4-6669a028e943 , inst:stairflight_bcd1cf34-5c93-41cc-a7e4-6669a028e872 , inst:member_bcd1cf34-5c93-41cc-a7e4-6669a028e87b ;
+        bot:hasSubElement            inst:slab_bcd1cf34-5c93-41cc-a7e4-6669a028e874 , inst:member_bcd1cf34-5c93-41cc-a7e4-6669a028e827 , inst:member_bcd1cf34-5c93-41cc-a7e4-6669a028e87a , inst:railing_bcd1cf34-5c93-41cc-a7e4-6669a028e93f , inst:stairflight_bcd1cf34-5c93-41cc-a7e4-6669a028e824 , inst:member_bcd1cf34-5c93-41cc-a7e4-6669a028e826 , inst:member_bcd1cf34-5c93-41cc-a7e4-6669a028e877 , inst:railing_bcd1cf34-5c93-41cc-a7e4-6669a028e943 , inst:stairflight_bcd1cf34-5c93-41cc-a7e4-6669a028e872 , inst:member_bcd1cf34-5c93-41cc-a7e4-6669a028e87b ;
         props:batid                inst:batid_bcd1cf34-5c93-41cc-a7e4-6669a028e264 ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_bcd1cf34-5c93-41cc-a7e4-6669a028e264 ;
         props:nameIfcRoot          inst:nameIfcRoot_bcd1cf34-5c93-41cc-a7e4-6669a028e264 ;
+        props:width                inst:width_bcd1cf34-5c93-41cc-a7e4-6669a028e264 ;
         props:objectTypeIfcObject  inst:objectTypeIfcObject_bcd1cf34-5c93-41cc-a7e4-6669a028e264 .
+
+inst:width_bcd1cf34-5c93-41cc-a7e4-6669a028e264
+        schema:value "900"^^xsd:double .
 
 inst:objectTypeIfcObject_77a80bbf-cd08-4d3b-98a5-781cad8e0f4f
         schema:value  "Basic Wall:Generic - 100mm" .
@@ -4388,7 +4388,7 @@ inst:slab_23ab4bcc-22d3-4d02-856d-a54cc43896b6
         props:objectTypeIfcObject  inst:objectTypeIfcObject_23ab4bcc-22d3-4d02-856d-a54cc43896b6 .
 
 inst:overallHeightIfcDoor_7b98892b-a279-4556-b928-6af71ee09f3b
-        schema:value  "1981.2"^^xsd:double .
+        schema:value  "2100"^^xsd:double .
 
 inst:nameIfcRoot_4c01da63-52b9-49ab-9b3d-b9163d479c9b
         schema:value  "Rectangular Mullion:50 x 150mm:562327" .
@@ -4435,7 +4435,7 @@ inst:longNameIfcSpatialStructureElement_c235f442-12a4-40c6-a632-b572a98f5f12
 
 inst:curtainwall_b402cada-c424-4de6-9db4-11a9297c77ae
         a                          <https://pi.pauwel.be/voc/buildingelement#CurtainWall> , bot:Element ;
-        bot:aggregates             inst:member_26b15939-6ab5-4afb-971c-d683aa1c223f , inst:plate_b402cada-c424-4de6-9db4-11a9297c77af , inst:member_26b15939-6ab5-4afb-971c-d683aa1c22c0 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c22c1 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c223e ;
+        bot:hasSubElement            inst:member_26b15939-6ab5-4afb-971c-d683aa1c223f , inst:plate_b402cada-c424-4de6-9db4-11a9297c77af , inst:member_26b15939-6ab5-4afb-971c-d683aa1c22c0 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c22c1 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c223e ;
         props:batid                inst:batid_b402cada-c424-4de6-9db4-11a9297c77ae ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_b402cada-c424-4de6-9db4-11a9297c77ae ;
         props:nameIfcRoot          inst:nameIfcRoot_b402cada-c424-4de6-9db4-11a9297c77ae ;
@@ -4546,7 +4546,7 @@ inst:overallHeightIfcWindow_9a2a22ab-f246-4ba5-9510-8a217d9f214e
         schema:value  "2770."^^xsd:double .
 
 inst:overallHeightIfcDoor_7b98892b-a279-4556-b928-6af71ee090d6
-        schema:value  "1981.2"^^xsd:double .
+        schema:value  "2100"^^xsd:double .
 
 inst:overallHeightIfcWindow_26b15939-6ab5-4afb-971c-d683aa1c2c4d
         schema:value  "2000."^^xsd:double .
@@ -5022,7 +5022,7 @@ inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f121b
         props:objectTypeIfcObject  inst:objectTypeIfcObject_9a2a22ab-f246-4ba5-9510-8a217d9f121b .
 
 inst:overallHeightIfcDoor_7b98892b-a279-4556-b928-6af71ee09084
-        schema:value  "1981.2"^^xsd:double .
+        schema:value  "2100"^^xsd:double .
 
 inst:globalIdIfcRoot_4c01da63-52b9-49ab-9b3d-b9163d479c88
         schema:value  "1C0TfZKhb9gvizkHOzHvo8" .
@@ -7903,7 +7903,7 @@ inst:objectTypeIfcObject_159411c1-c0e3-4aaf-b82d-ec7c93703650
 
 inst:roof_23ab4bcc-22d3-4d02-856d-a54ec43896b6
         a                          <https://pi.pauwel.be/voc/buildingelement#Roof> , bot:Element ;
-        bot:aggregates             inst:slab_23ab4bcc-22d3-4d02-856d-a54cc43896b6 ;
+        bot:hasSubElement          inst:slab_23ab4bcc-22d3-4d02-856d-a54cc43896b6 ;
         props:batid                inst:batid_23ab4bcc-22d3-4d02-856d-a54ec43896b6 ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_23ab4bcc-22d3-4d02-856d-a54ec43896b6 ;
         props:nameIfcRoot          inst:nameIfcRoot_23ab4bcc-22d3-4d02-856d-a54ec43896b6 ;
@@ -8231,7 +8231,7 @@ inst:member_26b15939-6ab5-4afb-971c-d683aa1c223f
 
 inst:curtainwall_b402cada-c424-4de6-9db4-11a9297c691b
         a                          bot:Element , <https://pi.pauwel.be/voc/buildingelement#CurtainWall> ;
-        bot:aggregates             inst:member_26b15939-6ab5-4afb-971c-d683aa1c2308 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2307 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c230b , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2306 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2305 , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c2260 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2304 , inst:plate_b402cada-c424-4de6-9db4-11a9297c6904 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2309 ;
+        bot:hasSubElement          inst:member_26b15939-6ab5-4afb-971c-d683aa1c2308 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2307 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c230b , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2306 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2305 , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c2260 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2304 , inst:plate_b402cada-c424-4de6-9db4-11a9297c6904 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2309 ;
         props:batid                inst:batid_b402cada-c424-4de6-9db4-11a9297c691b ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_b402cada-c424-4de6-9db4-11a9297c691b ;
         props:nameIfcRoot          inst:nameIfcRoot_b402cada-c424-4de6-9db4-11a9297c691b ;
@@ -8297,7 +8297,7 @@ inst:column_d44a18f9-5918-453b-b4e8-add9abbdea45
 
 inst:curtainwall_26b15939-6ab5-4afb-971c-d683aa1c1221
         a                          bot:Element , <https://pi.pauwel.be/voc/buildingelement#CurtainWall> ;
-        bot:aggregates             inst:member_26b15939-6ab5-4afb-971c-d683aa1c1379 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c1377 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c137a , inst:member_26b15939-6ab5-4afb-971c-d683aa1c1376 , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c121e ;
+        bot:hasSubElement          inst:member_26b15939-6ab5-4afb-971c-d683aa1c1379 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c1377 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c137a , inst:member_26b15939-6ab5-4afb-971c-d683aa1c1376 , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c121e ;
         props:batid                inst:batid_26b15939-6ab5-4afb-971c-d683aa1c1221 ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_26b15939-6ab5-4afb-971c-d683aa1c1221 ;
         props:nameIfcRoot          inst:nameIfcRoot_26b15939-6ab5-4afb-971c-d683aa1c1221 ;
@@ -10323,7 +10323,7 @@ inst:objectTypeIfcObject_57ba851c-6c7e-43eb-a968-95c0ea968705
 
 inst:curtainwall_b402cada-c424-4de6-9db4-11a9297c6bb7
         a                          bot:Element , <https://pi.pauwel.be/voc/buildingelement#CurtainWall> ;
-        bot:aggregates             inst:member_26b15939-6ab5-4afb-971c-d683aa1c2322 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2316 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231d , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2319 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231b , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2320 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231e , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2323 , inst:plate_b402cada-c424-4de6-9db4-11a9297c6bb0 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231c , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c238d , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2321 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231a , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2318 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231f , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c2240 , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c233e ;
+        bot:hasSubElement          inst:member_26b15939-6ab5-4afb-971c-d683aa1c2322 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2316 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231d , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2319 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231b , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2320 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231e , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2323 , inst:plate_b402cada-c424-4de6-9db4-11a9297c6bb0 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231c , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c238d , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2321 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231a , inst:member_26b15939-6ab5-4afb-971c-d683aa1c2318 , inst:member_26b15939-6ab5-4afb-971c-d683aa1c231f , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c2240 , inst:plate_26b15939-6ab5-4afb-971c-d683aa1c233e ;
         props:batid                inst:batid_b402cada-c424-4de6-9db4-11a9297c6bb7 ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_b402cada-c424-4de6-9db4-11a9297c6bb7 ;
         props:nameIfcRoot          inst:nameIfcRoot_b402cada-c424-4de6-9db4-11a9297c6bb7 ;
@@ -10412,7 +10412,7 @@ inst:batid_159411c1-c0e3-4aaf-b82d-ec7c937035d8
 
 inst:curtainwall_9a2a22ab-f246-4ba5-9510-8a217d9f1f4d
         a                          <https://pi.pauwel.be/voc/buildingelement#CurtainWall> , bot:Element ;
-        bot:aggregates             inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f1219 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f1218 , inst:plate_9a2a22ab-f246-4ba5-9510-8a217d9f11ea , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e3 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12ef , inst:plate_9a2a22ab-f246-4ba5-9510-8a217d9f1f4c , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e4 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f121b , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e2 , inst:plate_9a2a22ab-f246-4ba5-9510-8a217d9f1137 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e7 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12ee , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12ec , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e1 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f121a , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e6 , inst:plate_9a2a22ab-f246-4ba5-9510-8a217d9f12a2 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12ed , inst:plate_9a2a22ab-f246-4ba5-9510-8a217d9f129c , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e0 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e5 ;
+        bot:hasSubElement          inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f1219 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f1218 , inst:plate_9a2a22ab-f246-4ba5-9510-8a217d9f11ea , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e3 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12ef , inst:plate_9a2a22ab-f246-4ba5-9510-8a217d9f1f4c , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e4 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f121b , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e2 , inst:plate_9a2a22ab-f246-4ba5-9510-8a217d9f1137 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e7 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12ee , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12ec , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e1 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f121a , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e6 , inst:plate_9a2a22ab-f246-4ba5-9510-8a217d9f12a2 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12ed , inst:plate_9a2a22ab-f246-4ba5-9510-8a217d9f129c , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e0 , inst:member_9a2a22ab-f246-4ba5-9510-8a217d9f12e5 ;
         props:batid                inst:batid_9a2a22ab-f246-4ba5-9510-8a217d9f1f4d ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_9a2a22ab-f246-4ba5-9510-8a217d9f1f4d ;
         props:nameIfcRoot          inst:nameIfcRoot_9a2a22ab-f246-4ba5-9510-8a217d9f1f4d ;
@@ -10501,7 +10501,7 @@ inst:wall_5f2b46e3-4fa7-4050-aa0d-d78ac2e53414
         props:objectTypeIfcObject  inst:objectTypeIfcObject_5f2b46e3-4fa7-4050-aa0d-d78ac2e53414 .
 
 inst:treadLengthIfcStairFlight_bcd1cf34-5c93-41cc-a7e4-6669a028e872
-        schema:value  "0.820209973753281"^^xsd:double .
+        schema:value  "240"^^xsd:double .
 
 inst:globalIdIfcRoot_26b15939-6ab5-4afb-971c-d683aa1c223f
         schema:value  "0ciLavQhLA_vSSreEg728$" .
@@ -11238,7 +11238,7 @@ inst:batid_a497c9d3-10e6-485d-83c9-9d4fd3ef61a8
         schema:value  "556875" .
 
 inst:overallHeightIfcDoor_055cceea-293a-4b3d-afc2-3583db81a0f8
-        schema:value  "1981.2"^^xsd:double .
+        schema:value  "2100"^^xsd:double .
 
 inst:objectTypeIfcObject_23ab4bcc-22d3-4d02-856d-a54ec43890ed
         schema:value  "SOE-Columns-CRHConcrete:S\\X2\\00D8\\X0\\150" .
@@ -11572,8 +11572,6 @@ inst:stairflight_3f36fd30-4028-40f0-bc0e-73cddf919877
         props:batid                inst:batid_3f36fd30-4028-40f0-bc0e-73cddf919877 ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_3f36fd30-4028-40f0-bc0e-73cddf919877 ;
         props:nameIfcRoot          inst:nameIfcRoot_3f36fd30-4028-40f0-bc0e-73cddf919877 ;
-        props:numberOfRiserIfcStairFlight
-                inst:numberOfRiserIfcStairFlight_3f36fd30-4028-40f0-bc0e-73cddf919877 ;
         props:numberOfTreadsIfcStairFlight
                 inst:numberOfTreadsIfcStairFlight_3f36fd30-4028-40f0-bc0e-73cddf919877 ;
         props:objectTypeIfcObject  inst:objectTypeIfcObject_3f36fd30-4028-40f0-bc0e-73cddf919877 ;
@@ -12175,7 +12173,7 @@ inst:nameIfcRoot_77a80bbf-cd08-4d3b-98a5-781cad8e0371
 
 inst:stair_3f36fd30-4028-40f0-bc0e-73cddf91a5d4
         a                          <https://pi.pauwel.be/voc/buildingelement#Stair> , bot:Element ;
-        bot:aggregates             inst:stairflight_3f36fd30-4028-40f0-bc0e-73cddf919877 , inst:member_3f36fd30-4028-40f0-bc0e-73cddf919875 , inst:member_3f36fd30-4028-40f0-bc0e-73cddf919872 ;
+        bot:hasSubElement          inst:stairflight_3f36fd30-4028-40f0-bc0e-73cddf919877 , inst:member_3f36fd30-4028-40f0-bc0e-73cddf919875 , inst:member_3f36fd30-4028-40f0-bc0e-73cddf919872 ;
         props:batid                inst:batid_3f36fd30-4028-40f0-bc0e-73cddf91a5d4 ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_3f36fd30-4028-40f0-bc0e-73cddf91a5d4 ;
         props:nameIfcRoot          inst:nameIfcRoot_3f36fd30-4028-40f0-bc0e-73cddf91a5d4 ;
@@ -12701,7 +12699,7 @@ inst:wall_3f36fd30-4028-40f0-bc0e-73cddf91b5f2
         props:objectTypeIfcObject  inst:objectTypeIfcObject_3f36fd30-4028-40f0-bc0e-73cddf91b5f2 .
 
 inst:riserHeightIfcStairFlight_bcd1cf34-5c93-41cc-a7e4-6669a028e872
-        schema:value  "0.745980971128609"^^xsd:double .
+        schema:value  "170"^^xsd:double .
 
 inst:batid_055cceea-293a-4b3d-afc2-3583db81579f
         schema:value  "426263" .
@@ -13380,7 +13378,7 @@ inst:globalIdIfcRoot_2271a645-ab23-44c6-b8a4-1b91a55930ab
 
 inst:roof_7582c817-71a4-41b4-9a77-deef3f76a4fb
         a                          <https://pi.pauwel.be/voc/buildingelement#Roof> , bot:Element ;
-        bot:aggregates             inst:slab_7582c817-71a4-41b4-9a77-deed3f76a4fb ;
+        bot:hasSubElement          inst:slab_7582c817-71a4-41b4-9a77-deed3f76a4fb ;
         props:batid                inst:batid_7582c817-71a4-41b4-9a77-deef3f76a4fb ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_7582c817-71a4-41b4-9a77-deef3f76a4fb ;
         props:nameIfcRoot          inst:nameIfcRoot_7582c817-71a4-41b4-9a77-deef3f76a4fb ;
@@ -13437,7 +13435,7 @@ inst:objectTypeIfcObject_77a80bbf-cd08-4d3b-98a5-781cad8e03a5
 
 inst:curtainwall_4c01da63-52b9-49ab-9b3d-b9163d478729
         a                          <https://pi.pauwel.be/voc/buildingelement#CurtainWall> , bot:Element ;
-        bot:aggregates             inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c87 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c85 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479ca9 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479ca5 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c84 , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479c3b , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c8e , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c94 , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479b5b , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d47872a , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479cac , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c81 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479caa , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9d , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c80 , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479aef , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c8a , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479a8b , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479bfb , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479934 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479caf , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479bab , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479ca4 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c99 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c97 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479cae , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c83 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c89 , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479ab0 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c88 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479cab , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c93 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c91 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9b , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d4799d1 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9c , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9a , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c86 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c8f , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c98 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479cad , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c96 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c95 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9f , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479b1c , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479967 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c82 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9e , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c8b , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c92 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c90 , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479999 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479ca8 ;
+        bot:hasSubElement          inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c87 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c85 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479ca9 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479ca5 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c84 , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479c3b , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c8e , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c94 , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479b5b , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d47872a , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479cac , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c81 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479caa , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9d , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c80 , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479aef , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c8a , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479a8b , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479bfb , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479934 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479caf , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479bab , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479ca4 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c99 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c97 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479cae , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c83 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c89 , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479ab0 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c88 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479cab , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c93 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c91 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9b , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d4799d1 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9c , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9a , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c86 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c8f , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c98 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479cad , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c96 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c95 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9f , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479b1c , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479967 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c82 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c9e , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c8b , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c92 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479c90 , inst:plate_4c01da63-52b9-49ab-9b3d-b9163d479999 , inst:member_4c01da63-52b9-49ab-9b3d-b9163d479ca8 ;
         props:batid                inst:batid_4c01da63-52b9-49ab-9b3d-b9163d478729 ;
         props:globalIdIfcRoot      inst:globalIdIfcRoot_4c01da63-52b9-49ab-9b3d-b9163d478729 ;
         props:nameIfcRoot          inst:nameIfcRoot_4c01da63-52b9-49ab-9b3d-b9163d478729 ;
@@ -13864,3 +13862,100 @@ inst:nameIfcRoot_57ba851c-6c7e-43eb-a968-95c0ea96842f
 
 inst:nameIfcRoot_57ba851c-6c7e-43eb-a968-95c0ea968204
         schema:value  "SOE-Columns-CRHConcrete:S\\X2\\00D8\\X0\\150:557441" .
+
+inst:space_86ab964-8e6r-92op-a634-89c3uh634852
+        a                           bot:Space ;
+        props:heightIfcSpace        inst:heightIfcSpace_86ab964-8e6r-92op-a634-89c3uh634852 ;
+        props:widthIfcSpace         inst:widthIfcSpace__86ab964-8e6r-92op-a634-89c3uh634852 ;
+        props:batid                 inst:batid__86ab964-8e6r-92op-a634-89c3uh634852 .
+
+inst:heightIfcSpace_86ab964-8e6r-92op-a634-89c3uh634852
+        schema:value    "2200"^^xsd:double .
+
+inst:widthIfcSpace__86ab964-8e6r-92op-a634-89c3uh634852
+        schema:value    "1400"^^xsd:double .
+
+inst:batid__86ab964-8e6r-92op-a634-89c3uh634852
+        schema:value    "963254" .
+
+inst:space_76al651-9e6f-64iz-35s6oq792138
+        a               bot:Space ;
+        props:batid     inst:batid_76al651-9e6f-64iz-35s6oq792138 .
+
+inst:batid_76al651-9e6f-64iz-35s6oq792138
+        schema:value    "836753" .
+
+inst:door_48do631-4a6c-91bc-68z8axl378125
+        a               <https://pi.pauwel.be/voc/buildingelement#Door> ;
+        props:batid     inst:batid_48do631-4a6c-91bc-68z8axl378125 .
+
+inst:batid_48do631-4a6c-91bc-68z8axl378125
+        schema:value    "687321" .
+
+inst:landing_69au678-9a2x-86ka-69s3cac655843
+        a <https://pi.pauwel.be/voc/buildingelement#Slab-LANDING> ;
+        props:batid     inst:batid_69au678-9a2x-86ka-69s3cac655843 ;
+        props:widthIfcSlab inst:widthIfcSlab_69au678-9a2x-86ka-69s3cac655843 ;
+        props:depthIfcSlab inst:depthIfcSlab_69au678-9a2x-86ka-69s3cac655843 .
+
+inst:batid_69au678-9a2x-86ka-69s3cac655843
+        schema:value "697234" .
+
+inst:widthIfcSlab_69au678-9a2x-86ka-69s3cac655843
+        schema:value "1100"^^xsd:double .
+
+inst:depthIfcSlab_69au678-9a2x-86ka-69s3cac655843
+        schema:value "1400"^^xsd:double .
+
+inst:stairflight_69ah753-8a3c-65oa-35v7al963248
+        a <https://pi.pauwel.be/voc/buildingelement#StairFlight> ;
+        props:batid     inst:batid_69ah753-8a3c-65oa-35v7al963248 ;
+        props:numberOfRiserIfcStairFlight inst:numberOfRiserIfcStairFlight_69ah753-8a3c-65oa-35v7al963248 ;
+        props:riserHeightIfcStairFlight inst:riserHeightIfcStairFlight_69ah753-8a3c-65oa-35v7al963248 ;
+        props:treadLengthIfcStairFlight inst:treadLengthIfcStairFlight_69ah753-8a3c-65oa-35v7al963248 .
+
+inst:batid_69ah753-8a3c-65oa-35v7al963248
+        schema:value "694325" .
+
+inst:numberOfRiserIfcStairFlight_69ah753-8a3c-65oa-35v7al963248
+        schema:value "9"^^xsd:double .
+
+inst:riserHeightIfcStairFlight_69ah753-8a3c-65oa-35v7al963248
+        schema:value "150"^^xsd:double .
+
+inst:treadLengthIfcStairFlight_69ah753-8a3c-65oa-35v7al963248
+        schema:value "220"^^xsd:double .
+
+inst:rampflight_86ah622-8d3c-31xl-76a8cm364723
+        a                               <https://pi.pauwel.be/voc/buildingelement#RampFlight> ;
+        props:batid                     inst:batid_86ah622-8d3c-31xl-76a8cm364723 ;
+        props:heightIfcRampFlight       inst:heightIfcRampFlight_86ah622-8d3c-31xl-76a8cm364723 ;
+        props:lengthIfcRampFlight       inst:lengthIfcRampFlight_86ah622-8d3c-31xl-76a8cm364723 ;
+        props:widthIfcRampFlight        inst:widthIfcRampFlight_86ah622-8d3c-31xl-76a8cm364723 .
+
+inst:batid_86ah622-8d3c-31xl-76a8cm364723
+        schema:value "648312" .
+
+inst:heightIfcRampFlight_86ah622-8d3c-31xl-76a8cm364723
+        schema:value "100"^^xsd:double .
+
+inst:lengthIfcRampFlight_86ah622-8d3c-31xl-76a8cm364723
+        schema:value "100"^^xsd:double .
+
+inst:widthIfcRampFlight_86ah622-8d3c-31xl-76a8cm364723
+        schema:value "100"^^xsd:double .
+
+inst:rampflight_64ao873-9x3v-79oa-36a6cm694236
+        a                               <https://pi.pauwel.be/voc/buildingelement#RampFlight> ;
+        props:batid                     inst:batid_64ao873-9x3v-79oa-36a6cm694236 ;
+        props:heightIfcRampFlight       inst:heightIfcRampFlight_64ao873-9x3v-79oa-36a6cm694236 ;
+        props:lengthIfcRampFlight       inst:lengthIfcRampFlight_64ao873-9x3v-79oa-36a6cm694236 .
+
+inst:batid_64ao873-9x3v-79oa-36a6cm694236
+        schema:value "678312" .
+
+inst:heightIfcRampFlight_64ao873-9x3v-79oa-36a6cm694236
+        schema:value "600"^^xsd:double .
+
+inst:lengthIfcRampFlight_64ao873-9x3v-79oa-36a6cm694236
+        schema:value "40000"^^xsd:double .

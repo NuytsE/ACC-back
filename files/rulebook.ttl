@@ -1,4 +1,3 @@
-@prefix beo: <https://pi.pauwel.be/voc/buildingelement#> .
 @prefix bot: <https://w3id.org/bot#> .
 @prefix inst:  <http://consolidproject.org/models/duplex/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -27,7 +26,7 @@ schema:SpaceMVD
 
 schema:RampFlightMVD
   a sh:NodeShape ;
-  sh:targetClass beo:RampFlight ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#RampFlight> ;
   sh:property [
     sh:path props:heightIfcRampFlight ;
     sh:minCount 1 ;
@@ -49,7 +48,7 @@ schema:RampFlightMVD
 
 schema:SlabMVD
   a sh:NodeShape ;
-  sh:targetClass beo:Slab-LANDING ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#Slab-LANDING> ;
   sh:property [
     sh:path props:widthIfcSlab ;
     sh:minCount 1 ;
@@ -63,31 +62,41 @@ schema:SlabMVD
     sh:message "MVD - each slab should have exactly one 'depthIfcSlab'." ;
   ] .
 
-schema:StairMVD
+schema:StairFlightMVD
   a sh:NodeShape ;
-  sh:targetClass beo:StairFlight ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#StairFlight> ;
   sh:property [
     sh:path props:numberOfRiserIfcStairFlight ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD - each stair should have exactly one 'numberOfRiserIfcStairFlight'." ;
+    sh:message "MVD - each stairflight should have exactly one 'numberOfRiserIfcStairFlight'." ;
   ] ;
   sh:property [
     sh:path props:riserHeightIfcStairFlight ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD - each stair should have exactly one 'riserHeightIfcStairFlight'." ;
+    sh:message "MVD - each stairflight should have exactly one 'riserHeightIfcStairFlight'." ;
   ] ;
   sh:property [
     sh:path props:treadLengthIfcStairFlight ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:message "MVD - each stair should have exactly one 'treadLengthIfcStairFlight'." ;
+    sh:message "MVD - each stairflight should have exactly one 'treadLengthIfcStairFlight'." ;
+  ] .
+
+schema:StairMVD
+  a sh:NodeShape ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#Stair> ;
+  sh:property [
+    sh:path props:width ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:message "MVD - each stair should have exactly one 'width'." ;
   ] .
 
 schema:DoorMVD
   a sh:NodeShape ;
-  sh:targetClass beo:Door ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#Door> ;
   sh:property [
     sh:path props:overallHeightIfcDoor ;
     sh:minCount 1 ;
@@ -188,7 +197,7 @@ schema:SpaceWidth
 
 schema:Slopes;
   a sh:NodeShape ;
-  sh:targetClass beo:RampFlight ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#RampFlight> ;
   sh:message "Art. 19 - The slope of a rampflight can be at most 10% when the difference in height is less than 100 mm. The slope of a rampflight can be at most 8.3% when the difference in height lies between 100 and 250 mm. The slope of a rampflight can be at most 6.25% when the difference in height lies between 250 and 500 mm. The slope of a rampflight can be at most 5% when the difference in height is more than 500 mm." ;
   sh:or (
     [
@@ -297,7 +306,7 @@ schema:SlopeConstraint5
 
 schema:RampLanding
   a sh:NodeShape ;
-  sh:targetClass beo:Slab-LANDING ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#Slab-LANDING> ;
   sh:property [
     sh:path props:widthIfcSlab ;
     sh:property schema:RampLandingWidth ;
@@ -321,7 +330,7 @@ schema:RampLandingDepth
 
 schema:RampFlight
   a sh:NodeShape ;
-  sh:targetClass beo:RampFlight ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#RampFlight> ;
   sh:property [
     sh:path props:heightIfcRampFlight ;
     sh:property schema:RampFlightLanding ;
@@ -335,13 +344,13 @@ schema:RampFlightLanding
 
 schema:RampFlightWidth
   a sh:NodeShape ;
-  sh:targetClass beo:RampFlight ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#RampFlight> ;
+  sh:message "Art. 19 - The width of a rampflight must be at least 1200 mm, if the slope is more than 4%." ;
   sh:or (
     [
       sh:and (
         [
           sh:expression [
-            sh:message "Art. 19 - The width of a rampflight must be at least 1200 mm, if the slope is more than 4%." ;
             inst:lessThan (
               4
               [
@@ -367,6 +376,7 @@ schema:RampFlightWidth
               [ sh:path (props:lengthIfcRampFlight schema:value) ]
             )
           ]
+          4
         )
       ]
     ]
@@ -381,7 +391,7 @@ schema:RampFlightWidthConstraint
 
 schema:StairFlight
 	a sh:NodeShape ;
-	sh:targetClass beo:StairFlight ;
+	sh:targetClass <https://pi.pauwel.be/voc/buildingelement#StairFlight> ;
   sh:property [
     sh:path props:numberOfRiserIfcStairFlight ;
     sh:property schema:StairFlightLanding ;
@@ -415,7 +425,7 @@ schema:StairFlightTread
 
 schema:TooEasy
   a sh:NodeShape ;
-  sh:targetClass beo:StairFlight ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#StairFlight> ;
   sh:expression [
     sh:message "Art. 20 - This stair is too easy." ;
     inst:lessThan (
@@ -431,7 +441,7 @@ schema:TooEasy
 
 schema:TooSteep
   a sh:NodeShape ;
-  sh:targetClass beo:StairFlight ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#StairFlight> ;
   sh:expression [
     sh:message "Art. 20 - This stair is too steep." ;
     inst:lessThan (
@@ -447,10 +457,10 @@ schema:TooSteep
 
 schema:Stair 
   a sh:NodeShape ;
-	sh:targetClass beo:Stair ;
+	sh:targetClass <https://pi.pauwel.be/voc/buildingelement#Stair> ;
 	sh:property [
     sh:path bot:hasSubElement ;
-    sh:qualifiedValueShape [ sh:class beo:Railing ] ;
+    sh:qualifiedValueShape [ sh:class <https://pi.pauwel.be/voc/buildingelement#Railing> ] ;
     sh:qualifiedMinCount 2 ;
     sh:message "Art. 20 - All stairs must have a railing on both sides." ;
   ] ;
@@ -467,7 +477,7 @@ schema:StairWidth
 
 schema:Door
   a sh:NodeShape ;
-  sh:targetClass beo:Door ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#Door> ;
 	sh:property [
     sh:path props:overallHeightIfcDoor ;
     sh:property schema:DoorHeight ;

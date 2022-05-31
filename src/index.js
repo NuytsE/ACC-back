@@ -46,7 +46,7 @@ app.get("/report", async (req, res) => {
   try {
     const { spawn } = require("child_process");
     //pyshacl -s C:\Users\emman\OneDrive\Documenten\'21-'22\Thesis\rulebooks\rulebook.ttl -m -i rdfs -a -j -f human C:\Users\emman\OneDrive\Documenten\'21-'22\Thesis\modeldump\bibliotheekEdegem.ttl
-    {/*const report = spawn("pyshacl", [
+    const report = spawn("pyshacl", [
       "--shacl",
       `${process.cwd()}\\files\\rulebook.ttl`,
       "-m",
@@ -60,7 +60,7 @@ app.get("/report", async (req, res) => {
       "--output",
       `${process.cwd()}\\files\\report`,
     ]);
-  */}
+  
 
     const broadbandLines = new nReadlines("files\\report");
 
