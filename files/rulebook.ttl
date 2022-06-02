@@ -28,18 +28,6 @@ schema:RampFlightMVD
   a sh:NodeShape ;
   sh:targetClass <https://pi.pauwel.be/voc/buildingelement#RampFlight> ;
   sh:property [
-    sh:path props:heightIfcRampFlight ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-    sh:message "MVD - each rampflight should have exactly one 'heightIfcRampFlight'." ;
-  ] ;
-  sh:property [
-    sh:path props:lengthIfcRampFlight ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-    sh:message "MVD - each rampflight should have exactly one 'lengthIfcRampFlight'." ;
-  ] ;
-  sh:property [
     sh:path props:widthIfcRampFlight ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
@@ -70,18 +58,6 @@ schema:StairFlightMVD
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:message "MVD - each stairflight should have exactly one 'numberOfRiserIfcStairFlight'." ;
-  ] ;
-  sh:property [
-    sh:path props:riserHeightIfcStairFlight ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-    sh:message "MVD - each stairflight should have exactly one 'riserHeightIfcStairFlight'." ;
-  ] ;
-  sh:property [
-    sh:path props:treadLengthIfcStairFlight ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-    sh:message "MVD - each stairflight should have exactly one 'treadLengthIfcStairFlight'." ;
   ] .
 
 schema:StairMVD
@@ -132,53 +108,53 @@ inst:lessThan
     """ .
 
 inst:stairFormula
-	a sh:SPARQLFunction ;
-	rdfs:comment "stair formula" ;
-	sh:parameter [
-		sh:path inst:op1 ;
-		sh:datatype xsd:double ;
-		sh:description "riserHeight" ;
-	] ;
-	sh:parameter [
-		sh:path inst:op2 ;
-		sh:datatype xsd:double ;
-		sh:description "treadLength" ;
-	] ;
-	sh:returnType xsd:double ;
-	sh:select """
-		SELECT ( (2 * $op1 + $op2) AS ?result)
-		WHERE {
-		}
-		""" .
+  a sh:SPARQLFunction ;
+  rdfs:comment "stair formula" ;
+  sh:parameter [
+    sh:path inst:op1 ;
+    sh:datatype xsd:double ;
+    sh:description "riserHeight" ;
+  ] ;
+  sh:parameter [
+    sh:path inst:op2 ;
+    sh:datatype xsd:double ;
+    sh:description "treadLength" ;
+  ] ;
+  sh:returnType xsd:double ;
+  sh:select """
+    SELECT ( (2 * $op1 + $op2) AS ?result)
+    WHERE {
+    }
+    """ .
 
 inst:slope
-	a sh:SPARQLFunction ;
-	rdfs:comment "slope of a rampflight" ;
-	sh:parameter [
-		sh:path inst:op1 ;
-		sh:datatype xsd:double ;
-		sh:description "height rampflight" ;
-	] ;
-	sh:parameter [
-		sh:path inst:op2 ;
-		sh:datatype xsd:double ;
-		sh:description "length rampflight" ;
-	] ;
-	sh:returnType xsd:double ;
-	sh:select """
-		SELECT ( ( ($op1 / $op2) * 100) AS ?result)
-		WHERE {
-		}
-		""" .
+  a sh:SPARQLFunction ;
+  rdfs:comment "slope of a rampflight" ;
+  sh:parameter [
+    sh:path inst:op1 ;
+    sh:datatype xsd:double ;
+    sh:description "height rampflight" ;
+  ] ;
+  sh:parameter [
+    sh:path inst:op2 ;
+    sh:datatype xsd:double ;
+    sh:description "length rampflight" ;
+  ] ;
+  sh:returnType xsd:double ;
+  sh:select """
+    SELECT ( ( ($op1 / $op2) * 100) AS ?result)
+    WHERE {
+    }
+    """ .
 
 schema:Space
-	a sh:NodeShape ;
-	sh:targetClass bot:Space ;
-	sh:property [
+  a sh:NodeShape ;
+  sh:targetClass bot:Space ;
+  sh:property [
     sh:path props:heightIfcSpace ;
     sh:property schema:SpaceHeight ;
   ] ;
-	sh:property [
+  sh:property [
     sh:path props:widthIfcSpace ;
     sh:property schema:SpaceWidth ;
   ] .
@@ -390,17 +366,17 @@ schema:RampFlightWidthConstraint
   ] .
 
 schema:StairFlight
-	a sh:NodeShape ;
-	sh:targetClass <https://pi.pauwel.be/voc/buildingelement#StairFlight> ;
+  a sh:NodeShape ;
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#StairFlight> ;
   sh:property [
     sh:path props:numberOfRiserIfcStairFlight ;
     sh:property schema:StairFlightLanding ;
-	] ;
+  ] ;
   sh:property [
     sh:path props:riserHeightIfcStairFlight ;
     sh:property schema:StairFlightRiser ;
   ] ;
-	sh:property [
+  sh:property [
     sh:path props:treadLengthIfcStairFlight ;
     sh:property schema:StairFlightTread ;
   ] .
@@ -409,7 +385,7 @@ schema:StairFlightLanding
   a sh:PropertyShape ;
   sh:path schema:value ; 
   sh:maxInclusive "17"^^xsd:double ;
-	sh:message "Art. 20 - A staircase must have an intermediate landing after at most 17 treads." .
+  sh:message "Art. 20 - A staircase must have an intermediate landing after at most 17 treads." .
 
 schema:StairFlightRiser
   a sh:PropertyShape ;
@@ -457,8 +433,8 @@ schema:TooSteep
 
 schema:Stair 
   a sh:NodeShape ;
-	sh:targetClass <https://pi.pauwel.be/voc/buildingelement#Stair> ;
-	sh:property [
+  sh:targetClass <https://pi.pauwel.be/voc/buildingelement#Stair> ;
+  sh:property [
     sh:path bot:hasSubElement ;
     sh:qualifiedValueShape [ sh:class <https://pi.pauwel.be/voc/buildingelement#Railing> ] ;
     sh:qualifiedMinCount 2 ;
@@ -478,14 +454,14 @@ schema:StairWidth
 schema:Door
   a sh:NodeShape ;
   sh:targetClass <https://pi.pauwel.be/voc/buildingelement#Door> ;
-	sh:property [
+  sh:property [
     sh:path props:overallHeightIfcDoor ;
     sh:property schema:DoorHeight ;
   ] ;
-	sh:property [
+  sh:property [
     sh:path props:overallWidthIfcDoor ;
     sh:property schema:DoorWidth ;
-	] .
+  ] .
 
 schema:DoorHeight
   a sh:PropertyShape ;
