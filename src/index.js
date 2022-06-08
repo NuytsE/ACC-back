@@ -45,22 +45,16 @@ app.post("/upload", upload.single("LBDFile"), (req, res) => {
 app.get("/report", async (req, res) => {
   try {
     const { spawn } = require("child_process");
-    //pyshacl -s C:\Users\emman\OneDrive\Documenten\'21-'22\Thesis\rulebooks\rulebook.ttl -m -i rdfs -a -j -f human C:\Users\emman\OneDrive\Documenten\'21-'22\Thesis\modeldump\bibliotheekEdegem.ttl
-    const report = spawn("pyshacl", [
-      "--shacl",
-      `${process.cwd()}\\files\\rulebook.ttl`,
-      "-m",
-      "-i",
-      "rdfs",
-      "-a",
-      "-j",
-      "-f",
-      "human",
-      `${process.cwd()}\\files\\LBDFile.ttl`,
-      "--output",
-      `${process.cwd()}\\files\\report`,
-    ]);
-  
+    let report = spawn("pyshacl", ["--shacl",`${process.cwd()}\\files\\rulebook.ttl`,"-m","-i","rdfs","-a","-j","-f","human",`${process.cwd()}\\files\\LBDFile.ttl`,"--output",`${process.cwd()}\\files\\report`,])
+
+    var comp = false;
+
+    while (comp === false) {
+      const broadbandLines = new nReadlines("files\\report");
+      if (broadbandLines.next().length >= 0) {
+        var comp = true;
+      }
+    }
 
     const broadbandLines = new nReadlines("files\\report");
 
@@ -68,40 +62,51 @@ app.get("/report", async (req, res) => {
     var temp = {};
     var dict = {};
     var allResults = [];
+    var conforming = false;
 
     while ((line = broadbandLines.next())) {
       const splitted = String(line).split(":");
-
+      console.log(splitted);
       if (splitted[0].slice(0, 20) === "Constraint Violation") {
         if (Object.keys(temp).length !== 0) {
-          temp["id"] = "156978";
           allResults.push(temp);
         }
         var temp = {};
-        var shape = ""
-        if (splitted[0].slice(24,62) === "QualifiedValueShapeConstraintComponent") {
-          var shape = "Stair"
-        } else if (splitted[0].slice(24,51) === "MinCountConstraintComponent" ) {
-          var shape = "MVD"
+        var shape = "";
+        if (
+          splitted[0].slice(24, 62) === "QualifiedValueShapeConstraintComponent"
+        ) {
+          var shape = "Stair";
+        } else if (
+          splitted[0].slice(24, 51) === "MinCountConstraintComponent"
+        ) {
+          var shape = "MVD";
         }
       } else if (splitted[0].substring(1) === "Severity")
         temp["severity"] = splitted[2].slice(0, splitted[2].length - 1);
       else if (splitted[0].substring(1) === "Source Shape")
         if (shape !== "") {
-          temp["sourceShape"] = shape
+          temp["sourceShape"] = shape;
         } else {
-         temp["sourceShape"] = splitted[2].slice(0, splitted[2].length - 1); 
+          temp["sourceShape"] = splitted[2].slice(0, splitted[2].length - 1);
         }
-        
       else if (splitted[0].substring(1) === "Focus Node")
         temp["focusNode"] = splitted[2].slice(0, splitted[2].length - 1);
       else if (splitted[0].substring(1) === "Message")
         temp["message"] = splitted[1].slice(0, splitted[1].length - 1);
+      else if (splitted[0] === "Conforms") {
+        if (splitted[1].slice(1,5) === "True") {
+          conforming = true
+        }
+      }
     }
-    temp["id"] = "836753";
-    allResults.push(temp);
-    dict["results"] = allResults;
-
+    if (conforming === false ) {
+      allResults.push(temp);
+      dict["results"] = allResults;
+    } else {
+      dict["results"] = "conforms"
+    }
+    
     res.status(200).send(dict);
   } catch (error) {
     res.status(400).send(error);
