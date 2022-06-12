@@ -1,2 +1,104 @@
 Validation Report
-Conforms: True
+Conforms: False
+Results (15):
+Constraint Violation in MaxInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:RampFlightLanding
+	Focus Node: inst:heightIfcRampFlight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd
+	Value Node: Literal("550.0", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 19 - A ramp must have an intermediate landing if the difference in height is more than 500 mm.
+Constraint Violation in MaxInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:StairFlightLanding
+	Focus Node: inst:numberOfRiserIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119
+	Value Node: Literal("18.0", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 20 - A staircase must have an intermediate landing after at most 17 treads.
+Constraint Violation in MaxInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:StairFlightRiser
+	Focus Node: inst:riserHeightIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119
+	Value Node: Literal("270.0", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 20 - The riser height must be at most 180 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:StairFlightTread
+	Focus Node: inst:treadLengthIfcStairFlight_49ae3975-40eb-4040-87b2-554336d70119
+	Value Node: Literal("110.0", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 20 - The tread length must be at least 230 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:SpaceHeight
+	Focus Node: inst:heightIfcSpace_0b74b3fa-1a92-405e-9ac9-d59067bfe0cc
+	Value Node: Literal("2200.0", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 12 - The clearance height must be at least 2300 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:SpaceWidth
+	Focus Node: inst:widthIfcSpace_0b74b3fa-1a92-405e-9ac9-d59067bfe0cc
+	Value Node: Literal("1400.0", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 14 - The width of the walkway must be at least 1500 mm.
+Constraint Violation in ExpressionConstraintComponent (http://www.w3.org/ns/shacl#ExpressionConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:TooSteep
+	Focus Node: inst:stairflight_49ae3975-40eb-4040-87b2-554336d70119
+	Value Node: inst:stairflight_49ae3975-40eb-4040-87b2-554336d70119
+	Source Constraint: [ inst:lessThan ( [ inst:stairFormula ( <http://recursion.too.deep> <http://recursion.too.deep> ) ] Literal("630", datatype=xsd:integer) ) ; sh:message Literal("Art. 20 - This stair is too steep.") ]
+	Message: Art. 20 - This stair is too steep.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:Slopes
+	Focus Node: inst:rampflight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd
+	Value Node: inst:rampflight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd
+	Message: Art. 19 - The slope of a rampflight can be at most 10% when the difference in height is less than 100 mm. The slope of a rampflight can be at most 8.3% when the difference in height lies between 100 and 250 mm. The slope of a rampflight can be at most 6.25% when the difference in height lies between 250 and 500 mm. The slope of a rampflight can be at most 5% when the difference in height is more than 500 mm.
+Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:RampFlightWidth
+	Focus Node: inst:rampflight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd
+	Value Node: inst:rampflight_6b3bbdd1-3506-478f-9b4e-b28ed8fc41dd
+	Message: Art. 19 - The width of a rampflight must be at least 1200 mm, if the slope is more than 4%.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:DoorHeight
+	Focus Node: inst:overallHeightIfcDoor_6b61ce71-1a7a-473c-8f87-4262e0bdb41a
+	Value Node: Literal("2080.0", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 22 - The door height must be at least 2090 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:DoorWidth
+	Focus Node: inst:overallWidthIfcDoor_6b61ce71-1a7a-473c-8f87-4262e0bdb41a
+	Value Node: Literal("80.0", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 22 - The door width must at least 900 mm.
+Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:message Literal("MVD - each stair should have exactly one 'width'.") ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path props:width ]
+	Focus Node: inst:stair_81be7c96-ce56-447e-9d93-021422f83127
+	Result Path: props:width
+	Message: MVD - each stair should have exactly one 'width'.
+Constraint Violation in QualifiedValueShapeConstraintComponent (http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: [ sh:message Literal("Art. 20 - All stairs must have a railing on both sides.") ; sh:path bot:hasSubElement ; sh:qualifiedMinCount Literal("2", datatype=xsd:integer) ; sh:qualifiedValueShape [ sh:class <https://pi.pauwel.be/voc/buildingelement#Railing> ] ]
+	Focus Node: inst:stair_81be7c96-ce56-447e-9d93-021422f83127
+	Result Path: bot:hasSubElement
+	Message: Art. 20 - All stairs must have a railing on both sides.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:RampLandingWidth
+	Focus Node: inst:widthIfcSlab_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd
+	Value Node: Literal("1100.0", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 19 - The width of a landing of a ramp must be at least 1200 mm.
+Constraint Violation in MinInclusiveConstraintComponent (http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: schema1:RampLandingDepth
+	Focus Node: inst:depthIfcSlab_6b3bbdd1-3506-478f-9b4e-b242d8fc41dd
+	Value Node: Literal("1400.0", datatype=xsd:double)
+	Result Path: schema1:value
+	Message: Art. 19 - The depth of a landing of a ramp must be at least 1500 mm.

@@ -5,6 +5,8 @@ const helmet = require("helmet");
 const multer = require("multer");
 const cors = require("cors");
 const nReadlines = require("n-readlines");
+const {getbatid} = require('./batid.js')
+const {convertfocusnode} = require('./focusnode.js')
 
 const storage = multer.diskStorage({
   destination: function (req, file, next) {
@@ -52,7 +54,7 @@ app.get("/report", async (req, res) => {
     while (comp === false) {
       const broadbandLines = new nReadlines("files\\report");
       if (broadbandLines.next().length >= 0) {
-        var comp = true;
+        comp = true;
       }
     }
 
@@ -66,21 +68,20 @@ app.get("/report", async (req, res) => {
 
     while ((line = broadbandLines.next())) {
       const splitted = String(line).split(":");
-      console.log(splitted);
       if (splitted[0].slice(0, 20) === "Constraint Violation") {
         if (Object.keys(temp).length !== 0) {
           allResults.push(temp);
         }
-        var temp = {};
+        temp = {};
         var shape = "";
         if (
           splitted[0].slice(24, 62) === "QualifiedValueShapeConstraintComponent"
         ) {
-          var shape = "Stair";
+          shape = "Stair";
         } else if (
           splitted[0].slice(24, 51) === "MinCountConstraintComponent"
         ) {
-          var shape = "MVD";
+          shape = "MVD";
         }
       } else if (splitted[0].substring(1) === "Severity")
         temp["severity"] = splitted[2].slice(0, splitted[2].length - 1);
@@ -90,8 +91,16 @@ app.get("/report", async (req, res) => {
         } else {
           temp["sourceShape"] = splitted[2].slice(0, splitted[2].length - 1);
         }
-      else if (splitted[0].substring(1) === "Focus Node")
-        temp["focusNode"] = splitted[2].slice(0, splitted[2].length - 1);
+      else if (splitted[0].substring(1) === "Focus Node") {
+        //pySHACL sometimes returns a property as a 'focusnode', while the actual building element is desired in this application
+        //the returned 'focusnode' is converted to the name of the building element (declared as 'fn') to be able to retrieve the batid
+        const fn =  await convertfocusnode(splitted[2].slice(0, splitted[2].length - 1));
+        const batid = await getbatid(fn)
+
+        temp["focusNode"] = fn
+        temp["batid"] = batid
+      }
+        
       else if (splitted[0].substring(1) === "Message")
         temp["message"] = splitted[1].slice(0, splitted[1].length - 1);
       else if (splitted[0] === "Conforms") {
