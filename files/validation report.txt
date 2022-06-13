@@ -1,0 +1,101 @@
+Validation Report
+
+A Violation was found in the DoorWidth shape 
+The building element with name "door_7582c817-71a4-41b4-9a77-deef3f76aeaf" and id 378017 does not comply.
+ Art. 22 - The door width must at least 900 mm.
+
+A Violation was found in the StairFlightLanding shape 
+The building element with name "stairflight_bcd1cf34-5c93-41cc-a7e4-6669a028e824" and id 601124 does not comply.
+ Art. 20 - A staircase must have an intermediate landing after at most 17 treads.
+
+A Violation was found in the StairFlightRiser shape 
+The building element with name "stairflight_3f36fd30-4028-40f0-bc0e-73cddf919877" and id 516545 does not comply.
+ Art. 20 - The riser height must be at most 180 mm.
+
+A Violation was found in the StairFlightTread shape 
+The building element with name "stairflight_69ah753-8a3c-65oa-35v7al963248" and id 694325 does not comply.
+ Art. 20 - The tread length must be at least 230 mm.
+
+A Violation was found in the Slopes shape 
+The building element with name "rampflight_86ah622-8d3c-31xl-76a8cm364723" and id 648312 does not comply.
+ Art. 19 - The slope of a rampflight can be at most 10% when the difference in height is less than 100 mm. The slope of a rampflight can be at most 8.3% when the difference in height lies between 100 and 250 mm. The slope of a rampflight can be at most 6.25% when the difference in height lies between 250 and 500 mm. The slope of a rampflight can be at most 5% when the difference in height is more than 500 mm.
+
+A Violation was found in the MVD shape 
+The building element with name "space_76al651-9e6f-64iz-35s6oq792138" and id 836753 does not comply.
+ MVD - each space should have exactly one 'heightIfcSpace'.
+
+A Violation was found in the MVD shape 
+The building element with name "space_76al651-9e6f-64iz-35s6oq792138" and id 836753 does not comply.
+ MVD - each space should have exactly one 'widthIfcSpace'.
+
+A Violation was found in the RampFlightWidth shape 
+The building element with name "rampflight_86ah622-8d3c-31xl-76a8cm364723" and id 648312 does not comply.
+ Art. 19 - The width of a rampflight must be at least 1200 mm, if the slope is more than 4%.
+
+A Violation was found in the MVD shape 
+The building element with name "stairflight_3f36fd30-4028-40f0-bc0e-73cddf919877" and id 516545 does not comply.
+ MVD - each stairflight should have exactly one 'numberOfRiserIfcStairFlight'.
+
+A Violation was found in the RampFlightLanding shape 
+The building element with name "rampflight_64ao873-9x3v-79oa-36a6cm694236" and id 678312 does not comply.
+ Art. 19 - A ramp must have an intermediate landing if the difference in height is more than 500 mm.
+
+A Violation was found in the MVD shape 
+The building element with name "stair_3f36fd30-4028-40f0-bc0e-73cddf91a5d4" and id 515170 does not comply.
+ MVD - each stair should have exactly one 'width'.
+
+A Violation was found in the MVD shape 
+The building element with name "door_48do631-4a6c-91bc-68z8axl378125" and id 687321 does not comply.
+ MVD - each door should have exactly one 'overallHeightIfcDoor'.
+
+A Violation was found in the MVD shape 
+The building element with name "door_48do631-4a6c-91bc-68z8axl378125" and id 687321 does not comply.
+ MVD - each door should have exactly one 'overallWidthIfcDoor'.
+
+A Violation was found in the TooSteep shape 
+The building element with name "stairflight_3f36fd30-4028-40f0-bc0e-73cddf919877" and id 516545 does not comply.
+ Art. 20 - This stair is too steep.
+
+A Violation was found in the MVD shape 
+The building element with name "rampflight_64ao873-9x3v-79oa-36a6cm694236" and id 678312 does not comply.
+ MVD - each rampflight should have exactly one 'widthIfcRampFlight'.
+
+A Violation was found in the SpaceHeight shape 
+The building element with name "space_86ab964-8e6r-92op-a634-89c3uh634852" and id 963254 does not comply.
+ Art. 12 - The clearance height must be at least 2300 mm.
+
+A Violation was found in the SpaceWidth shape 
+The building element with name "space_86ab964-8e6r-92op-a634-89c3uh634852" and id 963254 does not comply.
+ Art. 14 - The width of the walkway must be at least 1500 mm.
+
+A Violation was found in the MVD shape 
+The building element with name "slab_bcd1cf34-5c93-41cc-a7e4-6669a028e874" and id 601204 does not comply.
+ MVD - each slab should have exactly one 'widthIfcSlab'.
+
+A Violation was found in the MVD shape 
+The building element with name "slab_bcd1cf34-5c93-41cc-a7e4-6669a028e874" and id 601204 does not comply.
+ MVD - each slab should have exactly one 'depthIfcSlab'.
+
+A Violation was found in the Stair shape 
+The building element with name "stair_3f36fd30-4028-40f0-bc0e-73cddf91a5d4" and id 515170 does not comply.
+ Art. 20 - All stairs must have a railing on both sides.
+
+A Violation was found in the StairWidth shape 
+The building element with name "stair_bcd1cf34-5c93-41cc-a7e4-6669a028e264" and id 599652 does not comply.
+ Art. 20 - The width of a staircase must be at least 1000 mm.
+
+A Violation was found in the TooEasy shape 
+The building element with name "stairflight_69ah753-8a3c-65oa-35v7al963248" and id 694325 does not comply.
+ Art. 20 - This stair is too easy.
+
+A Violation was found in the RampLandingWidth shape 
+The building element with name "landing_69au678-9a2x-86ka-69s3cac655843" and id 697234 does not comply.
+ Art. 19 - The width of a landing of a ramp must be at least 1200 mm.
+
+A Violation was found in the RampLandingDepth shape 
+The building element with name "landing_69au678-9a2x-86ka-69s3cac655843" and id 697234 does not comply.
+ Art. 19 - The depth of a landing of a ramp must be at least 1500 mm.
+
+A Violation was found in the DoorHeight shape 
+The building element with name "door_7b98892b-a279-4556-b928-6af71ee09f7f" and id 411619 does not comply.
+ Art. 22 - The door height must be at least 2090 mm.

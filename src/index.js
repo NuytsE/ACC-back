@@ -5,8 +5,9 @@ const helmet = require("helmet");
 const multer = require("multer");
 const cors = require("cors");
 const nReadlines = require("n-readlines");
-const {getbatid, getbatidname} = require('./batid.js')
-const {convertfocusnode, isproperty} = require('./focusnode.js')
+const { getbatid, getbatidname } = require("./batid.js");
+const { convertfocusnode, isproperty } = require("./focusnode.js");
+const fs = require("fs");
 
 const storage = multer.diskStorage({
   destination: function (req, file, next) {
@@ -70,6 +71,13 @@ app.get("/report", async (req, res) => {
       const splitted = String(line).split(":");
       if (splitted[0].slice(0, 20) === "Constraint Violation") {
         if (Object.keys(temp).length !== 0) {
+          const content = `\n\nA ${temp.severity} was found in the ${temp.sourceShape} shape \nThe building element with name "${temp.focusNode}" and id ${temp.batid} does not comply.\n${temp.message}`;
+          fs.appendFile("files\\validation report.txt", content, (err) => {
+            if (err) {
+              console.error(err);
+              return;
+            }
+          });
           allResults.push(temp);
         }
         temp = {};
@@ -94,32 +102,41 @@ app.get("/report", async (req, res) => {
       else if (splitted[0].substring(1) === "Focus Node") {
         //pySHACL sometimes returns a property as a 'focusnode', while the actual building element is desired in this application
         //the returned 'focusnode' is converted to the name of the building element (declared as 'fn') to be able to retrieve the batid
-        const property = await isproperty(splitted[2].slice(0, splitted[2].length - 1))
-        const fn =  await convertfocusnode(splitted[2].slice(0, splitted[2].length - 1), property);
-        const batidname = await getbatidname(fn)
-        const batid = await getbatid(batidname)
+        const property = await isproperty(
+          splitted[2].slice(0, splitted[2].length - 1)
+        );
+        const fn = await convertfocusnode(
+          splitted[2].slice(0, splitted[2].length - 1),
+          property
+        );
+        const batidname = await getbatidname(fn);
+        const batid = await getbatid(batidname);
 
-        temp["focusNode"] = fn
-        temp["batid"] = batid
-      }
-        
-      else if (splitted[0].substring(1) === "Message")
+        temp["focusNode"] = fn;
+        temp["batid"] = batid;
+      } else if (splitted[0].substring(1) === "Message")
         temp["message"] = splitted[1].slice(0, splitted[1].length - 1);
       else if (splitted[0] === "Conforms") {
-        if (splitted[1].slice(1,5) === "True") {
-          conforming = true
+        if (splitted[1].slice(1, 5) === "True") {
+          conforming = true;
         }
       }
     }
-    if (conforming === false ) {
+
+    if (conforming === false) {
       allResults.push(temp);
       dict["results"] = allResults;
     } else {
-      dict["results"] = "conforms"
+      dict["results"] = "conforms";
     }
-    
+
     res.status(200).send(dict);
   } catch (error) {
     res.status(400).send(error);
   }
+});
+
+app.get("/download", async function (req, res) {
+  const file = "files\\validation report.txt";
+  res.download(file);
 });
