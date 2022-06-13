@@ -5,8 +5,8 @@ const helmet = require("helmet");
 const multer = require("multer");
 const cors = require("cors");
 const nReadlines = require("n-readlines");
-const {getbatid} = require('./batid.js')
-const {convertfocusnode} = require('./focusnode.js')
+const {getbatid, getbatidname} = require('./batid.js')
+const {convertfocusnode, isproperty} = require('./focusnode.js')
 
 const storage = multer.diskStorage({
   destination: function (req, file, next) {
@@ -94,8 +94,10 @@ app.get("/report", async (req, res) => {
       else if (splitted[0].substring(1) === "Focus Node") {
         //pySHACL sometimes returns a property as a 'focusnode', while the actual building element is desired in this application
         //the returned 'focusnode' is converted to the name of the building element (declared as 'fn') to be able to retrieve the batid
-        const fn =  await convertfocusnode(splitted[2].slice(0, splitted[2].length - 1));
-        const batid = await getbatid(fn)
+        const property = await isproperty(splitted[2].slice(0, splitted[2].length - 1))
+        const fn =  await convertfocusnode(splitted[2].slice(0, splitted[2].length - 1), property);
+        const batidname = await getbatidname(fn)
+        const batid = await getbatid(batidname)
 
         temp["focusNode"] = fn
         temp["batid"] = batid
