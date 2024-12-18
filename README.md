@@ -1,4 +1,4 @@
-This tool is a proof of concept application of a methodology for compliance checking of building projects, focussing on accessibility.
+This tool is a proof of concept application of a methodology for compliance checking of building projects, focussing on accessibility. This tool was developed for my masters thesis, which can be consulted at https://lib.ugent.be/catalog/rug01:003063643.
 
 ## Installation
 Download the ZIP folder of this repository, or clone it by running `git clone https://github.com/NuytsE/ACC-back` in a terminal.
